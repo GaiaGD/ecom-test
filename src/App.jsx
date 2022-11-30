@@ -1,10 +1,15 @@
-import React from "react"
+import React, {useContext} from "react"
+import {Routes, Route} from "react-router-dom"
+import {Context} from "./components/Context"
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
-import {Routes, Route} from "react-router-dom"
 
 function App() {    
+
+    const {theme} = useContext(Context)
+    console.log(theme)
+
     return (
         <div>
             <Header />
