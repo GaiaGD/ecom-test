@@ -1,9 +1,18 @@
-import React from "react"
+import React, {useContext} from "react"
+import {Context} from "../Context"
+import Image from "../components/Image"
 
 function Photos() {
+    const photosArray = useContext(Context)
+
+    // let imagesWall = photosArray.map(image => (
+    //     <Image />
+    // ))
+
+
     return (
         <main className="photos">
-            <h1>Images go here</h1>
+            {/* {imagesWall} */}
         </main>
     )
 }

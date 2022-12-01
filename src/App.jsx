@@ -1,14 +1,14 @@
 import React, {useContext} from "react"
 import {Routes, Route} from "react-router-dom"
-import {Context} from "./components/Context"
+import {Context} from "./Context"
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
 
 function App() {    
 
-    const {theme} = useContext(Context)
-    console.log(theme)
+    const photosArray = useContext(Context)
+    console.log(photosArray)
 
     return (
         <div>
