@@ -11,7 +11,6 @@ function ContextProvider({children}) {
         .then((res) => res.json())
         .then((data) => setPhotosArray(data))
     }, [])
-
     
     return (
         <Context.Provider value={{photosArray}}>

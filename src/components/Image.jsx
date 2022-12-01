@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function Image({className}){
+export default function Image(props){
     return (
         <div
-        // className={`${} image-container`}
+        className={`${props.className} image-container`}
         >
             <img
-            // src={}
+            src={props.img.url}
             className="image-grid" />
         </div>
     )
