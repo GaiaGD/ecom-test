@@ -2,7 +2,7 @@ import React from 'react'
 const Context = React.createContext()
 
 
-function ContextProvider(props) {
+function ContextProvider({children}) {
     const [photosArray, setPhotosArray] = React.useState([])
 
     React.useEffect(() => {
@@ -15,7 +15,7 @@ function ContextProvider(props) {
     
     return (
         <Context.Provider value={{photosArray}}>
-            {props.children}
+            {children}
         </Context.Provider>
     )
 }
