@@ -8,8 +8,6 @@ function Photos() {
     
     let imagesWall = photosArray.map((image, i) => {
 
-        console.log(i, getClass(i))
-
         return(
             <Image key={image.id} img={image}
             className={getClass(i)}
