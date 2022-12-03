@@ -37,10 +37,15 @@ function Cart() {
         <main className="cart-page">
             <h1>Check out</h1>
             {itemsInCartPage}
-            <p className="total-cost">Total:  {totalCost()}</p>
-            <div className="order-button">
-            {cartItems.length > 0 && <button onClick={placeOrder}>{buttonText}</button>}
-            </div>
+            {cartItems.length > 0 ? 
+                <div>
+                    <p className="total-cost">Total:  {totalCost()}</p>
+                    <div className="order-button">
+                    <button onClick={placeOrder}>{buttonText}</button>
+                    </div>
+                </div> :
+                <p>You have no items in your cart</p>
+            }
         </main>
     )
 }

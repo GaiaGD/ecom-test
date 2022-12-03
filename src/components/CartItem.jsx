@@ -16,7 +16,6 @@ function CartItem({item, cost}) {
     return (
         <div className="cart-item" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
             {cartIcon()}
-            {/* <i onClick={() => removeFromCart(item.id)} className="ri-delete-bin-line"></i> */}
             <img src={item.url} width="130px" />
             <p id={item.id}>${cost}</p>
         </div>
