@@ -1,14 +1,24 @@
-import React, {useContext} from "react"
+import React, {useState, useContext} from "react"
 import { Context } from '../Context'
 
-function CartItem({item}) {
+function CartItem({item, cost}) {
     const {removeFromCart} = useContext(Context) 
-    
+    const [hovered, setHovered] = useState(false)
+
+    function cartIcon() {
+        if(hovered) {
+            return <i className="ri-delete-bin-fill" onClick={() => removeFromCart(item.id)}></i>
+        } else {
+            return <i className="ri-delete-bin-line"></i>
+        }
+    }
+
     return (
-        <div className="cart-item">
-            <i onClick={() => removeFromCart(item.id)} className="ri-delete-bin-line"></i>
+        <div className="cart-item" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+            {cartIcon()}
+            {/* <i onClick={() => removeFromCart(item.id)} className="ri-delete-bin-line"></i> */}
             <img src={item.url} width="130px" />
-            <p>$5.99</p>
+            <p id={item.id}>${cost}</p>
         </div>
     )
 }
