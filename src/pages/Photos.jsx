@@ -9,7 +9,7 @@ function Photos() {
     let imagesWall = photosArray.map((image, i) => {
 
         return(
-            <Image key={image.id} img={image}
+            <Image key={image.id} image={image}
             className={getClass(i)}
             />
         )
